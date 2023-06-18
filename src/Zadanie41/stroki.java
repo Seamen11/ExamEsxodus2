@@ -6,7 +6,7 @@ import java.util.SimpleTimeZone;
 
 public class stroki {
     public static void exportExcel(String tablename, String filename) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exam", "root", "1172093Nik")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exam", "root", "root")) {
             System.out.println("Успешное подключение к базе данных.");
 
             String query = "SELECT * FROM " + tablename;
@@ -33,7 +33,7 @@ public class stroki {
         }
     }
     public static void createQuery(String tablename) throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "1172093Nik");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "root");
         System.out.println("Connection done");
 
         String createQuery = "CREATE TABLE IF NOT EXISTS " + tablename + " (ID1 VARCHAR(255), ID2 VARCHAR(255))";
@@ -42,7 +42,7 @@ public class stroki {
         System.out.println("Таблица успешно создана!");
     }
     public static void insertSQL(String tablename, String ID1, String ID2) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "1172093Nik")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "root")) {
             System.out.println("Connection done");
 
             String createQuery = "CREATE TABLE IF NOT EXISTS " + tablename + " (ID1 VARCHAR(255), ID2 VARCHAR(255))";
@@ -63,7 +63,7 @@ public class stroki {
     }
 
     public static void showData(String tablename) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "1172093Nik")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "root")) {
             System.out.println("Connection done");
 
             String showQuery = "SELECT * FROM " + tablename;
@@ -114,7 +114,7 @@ public class stroki {
                 case 1 -> {
                     DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
                     String mySQLurl = "jdbc:mysql://localhost:3306/Exam";
-                    Connection con = DriverManager.getConnection(mySQLurl, "root", "1172093Nik");
+                    Connection con = DriverManager.getConnection(mySQLurl, "root", "root");
                     System.out.println("Успешное подключение к базе данных. ");
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery("Show Tables");

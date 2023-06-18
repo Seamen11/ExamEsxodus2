@@ -40,7 +40,7 @@ public class Math
         }
     }
     public static void createQuery(String tablename) throws SQLException {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "1172093Nik")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "root")) {
             System.out.println("Connection done");
 
             String createQuery = "CREATE TABLE IF NOT EXISTS " + tablename + " (ID1 INT, ID2 INT, RES DOUBLE)";
@@ -53,7 +53,7 @@ public class Math
     }
 
     public static void insertSQL(String tablename, int ID1, int ID2, double Result) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "1172093Nik")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "root")) {
             System.out.println("Connection done");
 
             String createQuery = "CREATE TABLE IF NOT EXISTS " + tablename + " (ID1 INT, ID2 INT, RES DOUBLE)";
@@ -74,7 +74,7 @@ public class Math
         }
     }
     public static void showData(String tablename) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "1172093Nik")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/Exam", "root", "root")) {
             System.out.println("Connection done");
 
             String showQuery = "SELECT * FROM " + tablename;
