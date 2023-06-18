@@ -6,7 +6,7 @@ public class Pryamougolnyi extends Treugolnik
 {
     public static boolean pryamougolnyi(int a, int b, int c)
     {
-        return b * b + c * c == a * a;
+        return b * b + a * a == c * c;
     }
     public static void main(String[] args) {
         System.out.println("Введите стороны вашего треугольника: ");
